@@ -1,2 +1,6 @@
 # Hierarchical_bootstrap_Matlab
-Implementing and modifying methods from Saravanan et al. 2019 in Matlab
+Implementing methods in Matlab from:
+Saravanan, V., Berman, G. J., & Sober, S. J. (2019). Application of the hierarchical bootstrap to multi-level data in neuroscience. BioRxiv. Retrieved from http://dx.doi.org/10.1101/819334
+and applying to some example data from my own work (preprint at https://www.biorxiv.org/content/10.1101/714337v1)
+
+All bugs are my own! For the original implementation and more details see the work from the authors: https://github.com/soberlab/Hierarchical-Bootstrap-Paper
