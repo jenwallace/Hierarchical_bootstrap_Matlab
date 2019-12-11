@@ -19,14 +19,11 @@ bootstats(2,:) = get_bootstrapped_equalsamples(data2,n_runs,num_trials,param);
 %Calculate probability of bootstats2 >= bootstats1:
 p_boot = get_direct_prob(bootstats(1,:),bootstats(2,:));
 
-%Get SEM from bootstrapped samples:
+%Get mean and SEM of bootstrapped samples:
 bootstats_sem = std(bootstats,'',2);
+bootstats_center = mean(bootstats,2);
+%Intentially not using nanmean here because if you get any NaNs in your bootstats, you will know that there was an issue with setting up matrices for sampling
 
-if strcmp(param,'mean')
-    bootstats_center = mean(bootstats,2);
-elseif strcmp(param,'median')
-    bootstats_center = median(bootstats,2);
-end
-
-
+if isnan(bootstats_center(1))||isnan(bootstats_center(2))
+    disp('NaN values are messing up sampling - check matrices and try again.);
 end
